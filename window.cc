@@ -59,8 +59,7 @@ int main() {
         Points.insert(Point(myrand(), myrand()));
     }
 
-    //int angle = 1 + rand() % 31;
-    int angle = 360;
+    int angle = 1 + rand() % 31;
 
     int max_count = 0, ret_angle = 0;
     for (auto slide_window = 0; slide_window <= 360; slide_window += angle) {
