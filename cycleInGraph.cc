@@ -17,13 +17,15 @@ public:
         adj[i].push_back(j);
     }
 
-    void dfs(int start, vector<bool>& visited) {
-        if (visited[start]) return;
+    bool dfs(int start, vector<bool>& visited) {
+        if (visited[start]) return true;
         visited[start] = true;
         cout << endl << start;
+        bool ret = false;
         for (auto &e: adj[start]) {
-            dfs(e, visited);
+            ret |= dfs(e, visited);
         }
+        return ret;
     }
 };
 
@@ -34,9 +36,12 @@ int main() {
     g->add_edge(0, 4);
     g->add_edge(0, 3);
     g->add_edge(1, 3);
-    g->add_edge(3, 4);
-    for (int i = 0; i < 5; i++) {
-        g->dfs(0, visited);
-    }
+    g->add_edge(0, 1);
+    //for (int i = 0; i < 5; i++) {
+        if (g->dfs(0, visited))
+            cout << "\n is cyclic";
+        else
+            cout << "\n is not cyclic";
+    //}
     cout << endl;
 }

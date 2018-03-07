@@ -4,7 +4,9 @@
 using namespace std;
 
 void print_ans(std::vector<int> ans) {
-    for (auto &e : ans) cout << e << " ";
+	if (ans.size() == 0) cout << "empty";
+    else
+    	for (auto &e : ans) cout << e << " ";
     cout << endl;
 }
 

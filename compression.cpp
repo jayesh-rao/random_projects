@@ -85,7 +85,7 @@ void compress_the_damm_string(char* ip) {
 int main()
 {
     
-    string str = "a";
+    string str = "aaaabbccccccc";
     size_t sz = str.size();
     char *s = (char*)malloc(2*sz+1);
     memset(s+sz, '-', sz);
